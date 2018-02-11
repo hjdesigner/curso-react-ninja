@@ -1,10 +1,12 @@
 'use strict'
 import React from 'react'
-import './search.css'
+import style from './search.css'
 
-const Button = ({ children, handleClick }) => (
-  <button className='main-button' onClick={handleClick}>{children}</button>
+const Search = () => (
+  <div className={style.search}>
+    <input className='main-input' placehold='Digite Seu nome' />
+  </div>
 )
 
-export default Button
+export default Search
 
