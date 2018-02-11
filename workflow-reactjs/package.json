@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node server.js",
+    "start": "webpack-dashboard -- node server.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "build": "webpack --progress --config webpack.prod.config -p"
@@ -24,6 +24,7 @@
     "standard-loader": "^4.0.0",
     "style-loader": "^0.20.1",
     "webpack": "^1.13.1",
+    "webpack-dashboard": "^1.1.1",
     "webpack-dev-server": "^1.14.1",
     "webpack-validator": "^2.2.2"
   },
