@@ -2,7 +2,8 @@
   "scripts": {
     "start": "node server.js",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "build": "webpack --progress --config webpack.prod.config -p"
   },
   "devDependencies": {
     "@kadira/storybook": "^2.21.0",
