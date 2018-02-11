@@ -1,0 +1,19 @@
+.userInfo img {
+  float: left;
+  margin: 0 20px 20px 0;
+  max-height: 200px;
+}
+
+.reposInfo li {
+  padding: 5px;
+}
+.starred {
+  float: left;
+  width: 100%;
+}
+.starred li {
+  padding: 10px 0;
+}
+.starred li + li {
+  border-top: 1px solid #ccc;
+}

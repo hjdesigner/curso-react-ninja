@@ -1,0 +1,10 @@
+'use strict'
+
+import { storiesOf } from '@storybook/react'
+import React from 'react'
+
+storiesOf('Div', module)
+  .add('First story', () => (
+    <div>Hello</div>
+  ))
+
