@@ -11,7 +11,7 @@ module.exports = validate({
 
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name]-[hash].js',
+    filename: '[name]-[hash].js'
   },
 
   plugins: [
