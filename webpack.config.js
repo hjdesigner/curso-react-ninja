@@ -22,8 +22,6 @@ module.exports = validate({
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new DashboardPlugin(),
     new ExtractTextPlugin('[name]-[hash].css'),
     new HtmlPlugin({
       title: 'Github APP',

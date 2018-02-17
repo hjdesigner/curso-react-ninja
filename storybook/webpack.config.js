@@ -17,6 +17,23 @@ module.exports = function (config, env) {
       utils: path.join(__dirname, '..', 'src', 'utils')
     }
   }
+  const cssLoader = newConfig.module.loaders.find((loader) => {
+    return loader.test.test('actions.css')
+  })
+
+  newConfig.module.loaders = (newConfig.module.loaders || []).map((loader) => {
+    if (loader.test.test('actions.css')) {
+      return {
+        ...loader,
+        loaders: loader.loaders.map((internalLoader) => {
+          return internalLoader.includes('/css-loader')
+            ? `${internalLoader}&modules`
+            : internalLoader
+        })
+      }
+    }
+    return loader
+  })
 
   return newConfig
 }
