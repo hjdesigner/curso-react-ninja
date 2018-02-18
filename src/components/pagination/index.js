@@ -3,11 +3,12 @@
 import React, { PropTypes } from 'react'
 import pagination from 'utils/pagination'
 import Page from './page'
+import Stylus from './pagination.css'
 
 const Pagination = ({ total, activePage, pageLink, onClick }) => (
-  <ul>
+  <ul className={Stylus.pagination}>
     {pagination({ total, activePage }).map((page, index) => (
-      <li key={index} style={activePage === page ? {color: 'red'} : null}>
+      <li className={`${Stylus.paginationItem} ${activePage === page ? `${Stylus.paginationActive}` : ''}`} key={index} >
         <Page page={page} ativePage={5} pageLink={pageLink.replace('%page%', page)} onClick={onClick} />
       </li>
     ))}

@@ -7,7 +7,6 @@ const DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = validate({
   devtool: 'source-map',
-
   entry: [
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:3000',
@@ -22,6 +21,7 @@ module.exports = validate({
   },
 
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new ExtractTextPlugin('[name]-[hash].css'),
     new HtmlPlugin({
       title: 'Github APP',
@@ -53,7 +53,7 @@ module.exports = validate({
   resolve: {
     alias: {
       src: path.join(__dirname, 'src'),
-      components: path.join(__dirname, 'src', 'components')
+      components: path.join(__dirname, 'src', 'components'),
       utils: path.join(__dirname, 'src', 'utils')
     }
   }

@@ -1,6 +1,7 @@
 'use strict'
 
 import React, { PropTypes } from 'react'
+import Pagination from 'components/pagination'
 import Stylus from './repos.css'
 
 const Repos = ({ className, title, repos }) => (
@@ -11,6 +12,8 @@ const Repos = ({ className, title, repos }) => (
         <li key={index}><a href={repo.link}>{repo.name}</a></li>
       ))}
     </ul>
+
+    <Pagination total={10} activePage={3}/>
   </div>
 )
 

@@ -1,0 +1,30 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.paginationItem {
+  align-items: center;
+  border: 1px solid #ccc;
+  color: inherit;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  min-width: 50px;
+  text-decoration: none;
+  width: 50px;
+}
+.paginationItem a{
+  text-decoration: none;
+  color: #000;
+}
+.paginationItem:not(:first-child) .paginationLink {
+  border-left: 0;
+}
+.paginationActive {
+  background: #333;
+}
+.paginationActive a{
+  color: #fff;
+}
