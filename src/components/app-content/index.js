@@ -14,36 +14,45 @@ const AppContent = ({
   isFetching,
   handleSearch,
   getRepos,
-  getStarred
+  getStarred,
+  handlePagination
 }) => (
   <div className={Stylus.app}>
     <Search isDisabled={isFetching} handleSearch={handleSearch} />
     {isFetching && <div>Carregando...</div>}
     {!!userinfo && <UserInfo userinfo={userinfo} />}
     {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
-    {!!repos.length &&
+    {!!repos.repos.length &&
       <Repos
         className='repos'
         title='Repositórios'
         repos={repos}
+        handlePagination={(clicked) => handlePagination('repos', clicked)}
       />
     }
-    {!!starred.length &&
+    {!!starred.repos.length &&
       <Repos
         className='starred'
         title='Repositórios Favoritos'
         repos={starred}
+        handlePagination={(clicked) => handlePagination('starred', clicked)}
       />
     }
   </div>
 )
 
+const reposPropTypesShapes = {
+  repos: PropTypes.array.isRequired,
+  pagination: PropTypes.object
+}
+
 AppContent.prototype = {
   userinfo: PropTypes.object,
-  repos: PropTypes.array.isRequired,
-  starred: PropTypes.array.isRequired,
+  repos: PropTypes.shape(reposPropTypesShapes).isRequired,
+  starred: PropTypes.shape(reposPropTypesShapes).isRequired,
   isFetching: PropTypes.bool.isRequired,
   handleSearch: PropTypes.func.isRequired,
+  handlePagination: PropTypes.func.isRequired,
   getRepos: PropTypes.func.isRequired,
   getStarred: PropTypes.func.isRequired
 }
